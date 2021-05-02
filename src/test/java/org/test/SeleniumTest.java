@@ -83,10 +83,11 @@ public class SeleniumTest  {
         URL = js.executeScript("return document.URL;").toString();
         Assert.assertEquals(URL, "https://catalog.onliner.by/tv?mfr%5B0%5D=samsung&price%5Bto%5D=1000.00&diagonal_tv%5Bfrom%5D=400&diagonal_tv%5Bto%5D=500&resolution_tv%5B0%5D=1920x1080&resolution_tv%5Boperation%5D=union");
 
-        Assert.assertEquals(verification.verifyTitle(), true);
-        Assert.assertEquals(verification.verifyResolution(), true);
-        Assert.assertEquals(verification.verifyPrice(), true);
-        Assert.assertEquals(verification.verifyInches(), true);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(verification.verifyTitle(), true);
+        softAssert.assertEquals(verification.verifyResolution(), true);
+        softAssert.assertEquals(verification.verifyPrice(), true);
+        softAssert.assertEquals(verification.verifyInches(), true);
 
     }
 
