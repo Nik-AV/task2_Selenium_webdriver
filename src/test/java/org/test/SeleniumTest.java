@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.pages.CatalogMainPage;
 import org.pages.OnlinerMainPage;
 import org.pages.TVPage;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -46,11 +47,15 @@ public class SeleniumTest  {
 
         onlinerMainPage.entryCatalog();
 
+        Assert.assertEquals(catalogMainPage.isCatalogTitleVisible(),true);
+
         catalogMainPage.clickElectronics();
 
         catalogMainPage.clickTelevision();
 
         catalogMainPage.clickTV();
+
+        Assert.assertEquals(tvPage.isTVTitleVisible(),true);
 
         tvPage.selectSamsung();
 
@@ -62,7 +67,7 @@ public class SeleniumTest  {
 
         tvPage.selectMaxInch();
 
-        Thread.sleep(3000);
+        Assert.assertEquals(tvPage.isReadyForTest(),true);
 
         SoftAssert softAssert = new SoftAssert();
 

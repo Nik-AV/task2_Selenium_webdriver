@@ -57,4 +57,24 @@ public class TVPage {
         maxInch.click();
     }
 
+    @FindBy(xpath = "//*[@class=\"schema-header__title\"][contains(text(), 'Телевизоры')]")
+    private WebElement pageTitle;
+
+    public boolean isTVTitleVisible() {
+
+        if (!pageTitle.isDisplayed()) return false;
+
+        return true;
+    }
+
+    @FindBy(xpath = "//*[@class=\"schema-filter-button__sub schema-filter-button__sub_main\"][contains(text(), 'Найдено')]")
+    private WebElement firstFilteredElement;
+
+    public boolean isReadyForTest() {
+
+        if (!firstFilteredElement.isDisplayed()) return false;
+
+        return true;
+    }
+
 }

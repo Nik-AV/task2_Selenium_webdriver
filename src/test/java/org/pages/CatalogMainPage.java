@@ -33,5 +33,13 @@ public class CatalogMainPage {
     public void clickTV() {
         tv.click(); }
 
+    @FindBy(xpath = "//*[@class=\"catalog-navigation__title\"][contains(text(), 'Каталог')]")
+    private WebElement pageTitle;
 
+    public boolean isCatalogTitleVisible() {
+
+        if (!pageTitle.isDisplayed()) return false;
+
+        return true;
+    }
 }
