@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Suite" verbose="1" >
+<suite name="CatalogTestSuite" verbose="1" >
     <parameter name="startPage" value="https://www.onliner.by/"></parameter>
     <parameter name="chromedriver" value="src/test/resources/chromedriver.exe"></parameter>
-    <test name="CatalogTest">
+    <test name="TVCatalogTest">
         <classes>
             <class name="org.test.SeleniumTest"/>
             <parameter name="preconditionPrice" value="1000.0"></parameter>
