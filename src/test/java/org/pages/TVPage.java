@@ -68,11 +68,11 @@ public class TVPage {
     }
 
     @FindBy(xpath = "//*[@class=\"schema-filter-button__sub schema-filter-button__sub_main\"][contains(text(), 'Найдено')]")
-    private WebElement firstFilteredElement;
+    private WebElement filterResult;
 
     public boolean isReadyForTest() {
 
-        if (!firstFilteredElement.isDisplayed()) return false;
+        if (!filterResult.isDisplayed()) return false;
 
         return true;
     }
